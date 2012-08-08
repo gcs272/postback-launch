@@ -2,15 +2,90 @@
 <html lang='en'>
 <head>
 	<title>Postback</title>
+	<script type='text/javascript' src='https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js'></script>
+	<script type='text/javascript' src='/static/js/bootstrap.min.js'></script>
+	<link rel='stylesheet' href='/static/css/bootstrap.min.css' />
+	<link rel='stylesheet' href='/static/css/bootstrap-responsive.min.css' />
+	<link href='http://fonts.googleapis.com/css?family=Courgette' rel='stylesheet' type='text/css'/>
+	<meta name='viewport' content='width=device-width, initial-scale=1.0' />
+	<style type='text/css'>
+		a {
+			color: #fa5559;
+		}
+
+		div.container-fluid {
+			margin-top: 90px;
+		}
+
+		.salmon {
+			color: #fa5559;
+		}
+
+		div.content {
+			padding: 16px 32px;
+			border-radius: 4px;
+			background: url('/static/img/salmon-top.png') repeat-x;
+		}
+
+		.brand-header {
+			color: #fff;
+			font-family: 'Courgette', cursive, sans-serif;	
+			font-weight: normal;
+			margin: 0px 0px 42px 0px;
+			padding: 0px;
+		}
+
+		.brand-text {
+			color: #333;
+			font-family: 'Courgette', cursive, sans-serif;
+			font-weight: normal;
+		}
+
+		.shadow {
+			-moz-box-shadow:    2px 2px 3px 3px #eee;
+			-webkit-box-shadow: 2px 2px 3px 3px #eee;
+			box-shadow:         2px 2px 3px 3px #eee;
+		}
+
+		.links {
+			margin-top: 16px;
+			text-align: center;
+		}
+
+		small {
+			color: #555;
+			font-size: 12px;
+		}
+	</style>
 </head>
 <body>
-	<p>Hello world</p>
-	<form action='#' method='post'>
-		<input type='text' name='email' placeholder='Enter your email' />
-		<input type='submit' value='Sign up for the Beta' />
-	</form>
-	{% if contacted %}
-		<h1>Hooray!  Thanks!  Gracias!  Merci!</h1>
-	{% endif %}
+	<div class='container-fluid'>
+		<div class='row'>
+			<div class='offset4 span4 content shadow'>
+				<h2 class='brand-header'>Postback</h2>
+				<p><strong>Coming Soon: </strong> send customized thank you cards
+				build from your store listings on Etsy</p>
+				<hr />
+				<h3 class='brand-text'>Sign up for a beta invite</h3>
+				<form action='#' method='post' class='form'>
+					<input type='text' name='email' placeholder='Enter your email' />
+					<label class='checkbox'>
+						<input type='checkbox' name='beta' checked />
+						Sign me up for the beta
+					</label>
+					<input type='submit' class='btn' value='Sign Up' />
+				</form>
+				{% if contacted %}
+				<h1 class='brand-text'>Thanks for signing up!</h1>
+				<p>We're working hard to perfect Postback, and we'd love any
+				suggestions or feedback!</p>
+				{% endif %}
+
+				<div class='links'>
+					<small><a href='http://twitter.com/postback'>@Postback</a> | <a href='mailto:info@postback.io'>info@postback.io</a></small>
+				</div>
+			</div>
+		</div>
+	</div>
 </body>
 </html>
