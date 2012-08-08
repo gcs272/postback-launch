@@ -25,8 +25,13 @@ def index():
     if request.method == 'POST' and 'email' in request.form:
         email = Email()
         email.email = request.form.get('email', 'nobody')
-        g.store.add(email)
-        g.store.commit()
-        return render_template('index.html', contacted=True)
+        try:
+            g.store.add(email)
+            g.store.commit()
+            return render_template('index.html', contacted=True)
+        except:
+            g.store.rollback()
+            return render_template('index.html', duplicate=True)
+
     else:
         return render_template('index.html', contacted=False)

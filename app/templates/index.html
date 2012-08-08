@@ -66,21 +66,25 @@
 				<p><strong>Coming Soon: </strong> send customized thank you cards
 				build from your store listings on Etsy</p>
 				<hr />
+				{% if not contacted and not duplicate %}
+				<br />
 				<h3 class='brand-text'>Sign up for a beta invite</h3>
-				<form action='#' method='post' class='form'>
+				<form action='#' method='post' class='form-inline'>
 					<input type='text' name='email' placeholder='Enter your email' />
-					<label class='checkbox'>
-						<input type='checkbox' name='beta' checked />
-						Sign me up for the beta
-					</label>
 					<input type='submit' class='btn' value='Sign Up' />
 				</form>
-				{% if contacted %}
+				<br />
+				{% elif contacted %}
 				<h1 class='brand-text'>Thanks for signing up!</h1>
 				<p>We're working hard to perfect Postback, and we'd love any
 				suggestions or feedback!</p>
+				{% elif duplicate %}
+				<h1 class='brand-text'>Whoa there!</h1>
+				<p>It looks like you're already signed up!  You can always
+				reach out to us on <a href='http://twitter.com/postback'>Twitter</a> if you'd like to contact us</p>
 				{% endif %}
 
+				<hr />
 				<div class='links'>
 					<small><a href='http://twitter.com/postback'>@Postback</a> | <a href='mailto:info@postback.io'>info@postback.io</a></small>
 				</div>
