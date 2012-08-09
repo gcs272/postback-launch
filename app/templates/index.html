@@ -38,16 +38,21 @@
 
 		.brand-header {
 			color: #fff;
-			font-family: 'Courgette', cursive, sans-serif;	
 			font-weight: normal;
+			font-size: 40px;
+			line-height: 40px;
 			margin: 0px 0px 42px 0px;
 			padding: 0px;
+			text-align: center;
 		}
 
 		.brand-text {
 			color: #333;
-			font-family: 'Courgette', cursive, sans-serif;
 			font-weight: normal;
+		}
+
+		.brand-font {
+			font-family: 'Courgette', cursive, sans-serif;	
 		}
 
 		.shadow {
@@ -69,19 +74,25 @@
 		.row {
 			margin-left: 0px;
 		}
+
+		.text-center {
+			text-align: center
+		}
+
 	</style>
 </head>
 <body>
 	<div class='container-fluid'>
 		<div class='row'>
 			<div class='span4 content shadow'>
-				<h2 class='brand-header'>Postback</h2>
-				<p><strong>Coming Soon: </strong> send customized thank you cards
-				build from your store listings on Etsy</p>
+				<h2 class='brand-header brand-font'>Postback</h2>
+				<p>Send your Etsy customers personalized postcards featuring your shop's listings. Mail individual notes or large announcements, and spread your shop's love through the post.</p>
+
+				<div class="brand-font text-center"><h3>Coming Soon</h3></div>
 				<hr />
 				{% if not contacted and not duplicate %}
 				<br />
-				<h3 class='brand-text'>Sign up for a beta invite</h3>
+				<h3 class='brand-text brand-font'>Sign up for a beta invite</h3>
 				<form action='#' method='post' class='form-inline'>
 					<input type='text' name='email' placeholder='Enter your email' />
 					<input type='submit' class='btn' value='Sign Up' />
